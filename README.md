@@ -24,7 +24,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 静态标记
 静态提升
 事件侦听缓存
-2. 组合API
+2. 组合API(composition api): 具有独立公用功能的api
+组合API的本质: 在运行的时候,将组合api中暴露出去的数据/方法注入到vue2.0(optoin api) 中的 data/methods 等
 ```
 ### 创建vue3 项目 （Vite方式）
 ```
