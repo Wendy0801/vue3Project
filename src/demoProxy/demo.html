@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="test"></div>
+</body>
+<script src="demo.js"></script>
+<script>
+    // function  a(){
+    //     alert(0);
+    // }
+    // window.setTimeout(a, 1000)
+
+    var arr = [1,2,3,4,5,6];
+    var brr = [1,2,3,4,5,6];
+    var drr = [1,2,3,4,5,6];
+    var err = [1,2,3,4,5,6];
+    var frr = [1,2,3,4,5,6];
+    var grr = [1,2,3,4,5,6];
+    var hrr = [1,2,3,4,5,6];
+    var irr = [6,1,2,3,5,4];
+
+
+    //不改变原来数组
+    console.log("不改变原来数组")
+    var a = arr.concat(brr); // 不改变原来数组，返回一个新数组
+    console.log("concat",a, arr, brr)
+
+    var e = err.join('/');  //将数组的所有元素放在一个字符串里通过“/"隔开，放回一个字符串
+    console.log("join",e,err)
+
+    var g = grr.slice(2,5); // 截取数组下标是2，到下标是5之间的元素，返回一个新的数组，不改变原来数组
+    console.log("slice",g,grr)
+
+    var ab = irr.forEach((item, key)=>{}) //没返回值，不改变原来数组
+    console.log(ab, irr)
+
+    var bc = irr.map((item)=>{return ++item}) //对元素每个元素进行加工，返回一个新数组，不改变原来数组
+    console.log("map",bc,irr)
+
+    //改变原来数组
+    console.log("改变原来数组")
+    var b = arr.push(7,8,9)// 在数组后追加，改变原来数组，返回数组长度
+    console.log("push",b,arr)
+
+    var c = brr.pop(); //删除数组最后删除一位，改变原来数组，返回删除的元素
+    console.log("pop",c,brr)
+
+    var d = drr.unshift(7,8,9) //在数组前插入，改变原来数组，返回数组长度
+    console.log("unshift",d,drr)
+
+    var f = frr.shift(); //删除数组最前一位，改变原来数组，返回删除的元素
+    console.log("shift",f,frr)
+
+
+    var h = hrr.splice(1,3) // 删除元素中从下班1开始后3位,返回一个新数组，改变原来数组
+    console.log("splice",h,hrr)
+
+    var i = irr.sort() // 对数组进行从小到大的排序，排序后的数组，改变原来数组
+    console.log("sort",i,irr)
+
+    var z = irr.reverse() //对数组进行从大到小的倒序，排序后的数组，改变原来数组
+
+    console.log("reverse",z,irr)
+
+    var bc = irr.map((item)=>{return ++item})
+    console.log("map",bc,irr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</html>

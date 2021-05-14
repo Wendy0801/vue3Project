@@ -13,6 +13,8 @@
         <li v-for="(item, index) in state.stud" :key="item.id" @click="remStu(index)">{{item.name}}</li>
       </ul>
     </div>
+    <hr>
+    {{status.name}}
   </div>
 </template>
 
@@ -32,18 +34,31 @@ export default {
     //在组合API中,如果想定义方法,不用到methods中,直接定义即可
     function myFun(){
       count.value += 1;
+      status.name = '2'
     }
 
     let {state, remStu} = userRemoveStudent();
     let {state2, addStud} = addStudent(state)
 
+
+
+    let obj = {name: 'a'}
+    let status = new Proxy(obj, {
+      get(obj, key){
+        return obj[key]},
+      set(obj, key, value){
+        obj[key] = value;
+        return true;
+      }
+    })
+
     //注意点: 在组合API中定义的变量/方法,想要在外界被使用,必须通过return {count, myFun} 暴露出去
-    return {count, myFun, state, remStu, state2, addStud}
+    return {count, myFun, state, remStu, state2, addStud,status}
   }
 }
 
 function userRemoveStudent(){
-  //ref的注意点: 只能监听简单类型的变化,无法监听复杂类型的变化(对象/数组)
+  //ref的注意点: 官网建议ref只监听简单类型的变化,不建议监听复杂类型的变化(对象/数组)
   //通过reactive() 可以监听复杂类型的变化
   let state = reactive({
     stud:[{id: 1,name: "sz"}, {id: 2,name: "zh"}]
